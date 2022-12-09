@@ -1,18 +1,27 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 int main()
 {
 
-    int n;
+    // This code only works with negative integers
+    int n, ans = 0, i = 0;
     cout << "Enter the value: ";
     cin >> n;
+    n = n * -1;
 
-    while (n != 0)
+    while (i < 10)
     {
-        int bit = n & 1;
-        int oppBit = !bit;
-        cout << oppBit;
+        int bit = (n & 1) ^ 1;
+        if (bit)
+        {
+            ans = bit * pow(10, i) + ans;
+        }
         n = n >> 1;
+        i++;
     }
+
+    cout << ans;
+
     return 0;
 }
