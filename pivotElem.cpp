@@ -26,7 +26,7 @@ int findPivot(int arr[], int size)
 int main()
 {
 
-    int arr[] = {15, 19, 20, 1, 5, 6};
+    int arr[] = {15, 19, 20, 0, 1, 5, 6};
     int size = sizeof(arr) / sizeof(int);
 
     int pivotElemIndex = findPivot(arr, size);

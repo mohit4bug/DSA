@@ -23,7 +23,5 @@ int main()
     cin >> value;
     cout << linearSearch(arr, 10, value);
 
-    // Returns 1 if present and 0 if not present
-
     return 0;
 }
