@@ -1,24 +1,24 @@
 #include <iostream>
 using namespace std;
 
-void selectionSort(int arr[], int size)
+void sort(int arr[], int size)
 {
     for (int i = 0; i < size; i++)
     {
-        for (int j = i + 1; j < size; j++)
-        {
+        int key = arr[i];
+        int j = i - 1;
 
-            if (arr[i] > arr[j])
-            {
-                swap(arr[i], arr[j]);
-            }
+        while (key < arr[j] && j >= 0)
+        {
+            arr[j + 1] = arr[j];
+            j--;
         }
+        arr[j + 1] = key;
     }
 }
 
 void printArray(int arr[], int size)
 {
-
     for (int i = 0; i < size; i++)
     {
         cout << arr[i] << " ";
@@ -28,10 +28,11 @@ void printArray(int arr[], int size)
 int main()
 {
 
-    int arr[] = {6, 2, 1, 3, 5, 10};
+    int arr[] = {1, 2, 6, 4, 7, 0};
     int size = sizeof(arr) / sizeof(int);
-    selectionSort(arr, size);
 
+    sort(arr, size);
     printArray(arr, size);
+
     return 0;
 }
